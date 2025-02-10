@@ -4,7 +4,7 @@ local keyBind = Enum.KeyCode.J
 
 local function onKeyPress(input, gameProcessed)
     if input.KeyCode == keyBind and not gameProcessed then
-        print("A tecla 'V' foi pressionada!")
+        print("A tecla 'J' foi pressionada!")
         
         local voiceChatService = game:GetService("VoiceChatService")
             voiceChatService:joinVoice()
