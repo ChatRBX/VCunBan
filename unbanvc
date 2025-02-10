@@ -5,22 +5,20 @@ game:GetService("StarterGui"):SetCore("SendNotification",{
 })
 local UserInputService = game:GetService("UserInputService")
 
-local keyBind = Enum.KeyCode.J 
+local keyBind = Enum.KeyCode.J
 
 local function onKeyPress(input, gameProcessed)
     if input.KeyCode == keyBind and not gameProcessed then
-        print("A tecla 'J' foi pressionada!")
-        
+       
         local voiceChatService = game:GetService("VoiceChatService")
-            voiceChatService:joinVoice()
-			
-local UserInputService = game:GetService("UserInputService")
-local Players = game:GetService("Players")
-
-local player = Players.LocalPlayer
-
-UserInputService.InputBegan:Connect(onKeyPress)  
+        voiceChatService:joinVoice()
+		wait(2)
+		game:GetService("StarterGui"):SetCore("SendNotification",{
+		Title = "UnBan VC", 
+		Text = "Voice Chat reiniciado", 
+		Icon = ""
+		})
     end
 end
 
-UserInputService.InputBegan:Connect(onKeyPress) 
+UserInputService.InputBegan:Connect(onKeyPress)
