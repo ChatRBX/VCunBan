@@ -1,3 +1,8 @@
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "UnBan VC", 
+	Text = "Pressione J para desbanir no voice ou reentrar nele", 
+	Icon = ""
+})
 local UserInputService = game:GetService("UserInputService")
 
 local keyBind = Enum.KeyCode.J 
@@ -13,38 +18,6 @@ local UserInputService = game:GetService("UserInputService")
 local Players = game:GetService("Players")
 
 local player = Players.LocalPlayer
-local playerGui = player:WaitForChild("PlayerGui") 
-
-
-local keyBind = Enum.KeyCode.J 
-
-local function showMessage(messageText, duration, size)
-   
-    local screenGui = Instance.new("ScreenGui")
-    screenGui.Name = "MessageGui"
-    screenGui.Parent = playerGui
-
-    local textLabel = Instance.new("TextLabel")
-    textLabel.Size = UDim2.new(0.5, 0.1, 0.1, 0.2)
-    textLabel.Position = UDim2.new(-0.1, 0.8, 0.2, -50)
-    textLabel.BackgroundTransparency = 0
-    textLabel.BackgroundColor3 = Color3.new(0, 0, 0)
-    textLabel.TextColor3 = Color3.new(1, 1, 1)
-    textLabel.Font = Enum.Font.Creepster
-    textLabel.TextSize = 24
-    textLabel.Text = messageText 
-    textLabel.Parent = screenGui
-
-    task.delay(duration, function()
-        screenGui:Destroy()
-    end)
-end
-
-local function onKeyPress(input, gameProcessed)
-    if input.KeyCode == keyBind and not gameProcessed then
-        showMessage("Voice Chat Reconectado. ", 1.5) 
-    end
-end
 
 UserInputService.InputBegan:Connect(onKeyPress)  
     end
