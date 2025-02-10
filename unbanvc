@@ -1,6 +1,6 @@
 game:GetService("StarterGui"):SetCore("SendNotification",{
 	Title = "UnBan VC", 
-	Text = "Pressione J para desbanir no voice ou reentrar nele", 
+	Text = "Pressione J para desbanir o voice ou reentrar nele", 
 	Icon = ""
 })
 local UserInputService = game:GetService("UserInputService")
